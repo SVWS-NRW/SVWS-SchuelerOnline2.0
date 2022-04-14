@@ -1,0 +1,370 @@
+Inhalt,Beispieldaten,Hinweise,Datenfeld in Schüler Online,Xschule / Xbildung,SVWS-Datenfeld (Schild-3.0),Schild2.0-Datei,Schild2.0-Spalte,Schild2.0-Feldname,,
+6-stelliger Personenschlüssel,273808,wird von Schüler Online automatisch zugeteilt,PersonenSchluessel,"aktuell nicht verwendbar
+
+Idee:
+abgebendeSchule.SchildID (Schulnummer-SchildID)
+aufnehmendeSchule.SchildID (Schulnummer-SchildID)
+
+Schueler.NatuerlichePerson.Identifikationsnummer…",,,,,,
+,,,,Schueler.NameNatuerlichePerson.titel,,,,,,
+Vorname,Max,,Vorname,Schueler.NameNatuerlichePerson.vorname,schueler.Vorname,SchuelerBasisdaten.dat,2,Vorname,,
+Nachname,Mustermann,,Nachname,Schueler.NameNatuerlichePerson.familienname,schueler.Name,SchuelerBasisdaten.dat,1,Nachname,,
+,,,,Schueler.NameNatuerlichePerson.rufname,,,,,,
+,,,,"Schueler.NameNatuerlichePerson.fruehererFamilienname
+(wird vermutlich nicht benötigt)",,,,,,
+Geburtsname,Meier,,Geburtsname,Schueler.NameNatuerlichePerson.geburtsname,schueler.Geburtsname,SchuelerZusatzdaten.dat,5,Geburtsname,,
+Geburtsort,Berlin,,Geburtsort,Schueler.NatuerlichePerson.geburt.geburtsort,schueler.Geburtsort,SchuelerZusatzdaten.dat,6,Geburtsort,,
+Geburtsdatum,18.05.1981,"Die Ausgabe von Datumswerten erfolgt im Format ""TT.MM.JJJJ"", kann bei Bedarf aber auch auf das Format ""JJJJMMTT"" oder ""TT.MM.JJ"" umgestellt werden.",Geburtsdatum,Schueler.NatuerlichePerson.geburt.datum,schueler.Geburtsdatum,SchuelerBasisdaten.dat,3,Geburtsdatum,,
+Geschlecht,M,"Gibt Schlüssel für Geschlecht aus (M = männlich, W = weiblich, D = divers, X = ohne Angabe). Kann auch auf ""Text"" umgestellt werden. Gibt dann die Bezeichnung des Geschlechts aus.
+
+Die Ausgabe der Werte kann über den Button ""Zuordnung spezieller Feldinhalte"" (Symbol in der Spalte ganz rechts) auf der Seite ""Datenexport"" -> ""Export Schema Anmeldungen"" individuell eingestellt werden.",Geschlecht,Schueler.NatuerlichePerson.Geschlecht.geschlecht,schueler.Geschlecht,SchuelerBasisdaten.dat,4,Geschlecht,,
+Anrede,Herr,"""Herr"" oder ""Frau"" (bzw. leer bei divers und ohne Angaben)",SchuelerAnrede,Schueler.NameNatuerlichePerson.anrede,,,,,,
+Anrede mit Grußformel,Sehr geehrter Herr,"""Sehr geehrter Herr"" oder ""Sehr geehrte Frau"" (bzw. ""Sehr geehrte"" bei divers und ohne Angaben)",SchuelerAnrede2,wird in Schüler Online / Schild generiert,,,,,,
+volljährig?,0,"0 = nein, 1 = ja
+
+Die Ausgabe der Werte kann über den Button ""Zuordnung spezieller Feldinhalte"" (Symbol in der Spalte ganz rechts) auf der Seite ""Datenexport"" -> ""Export Schema Anmeldungen"" individuell eingestellt werden.",volljaehrig,wird in Schüler Online / Schild generiert,schueler.Volljaehrig,,,,,
+Externer Schlüssel aus dem Schulverwaltungsprogramm,ABC123,Externe ID-Nummer des Schülerdatensatzes (z.B. aus Einwohnermeldewesen oder Schulverwaltungsprogramm). Liegt in der Regel NICHT vor.,KeyExtern,siehe Personenschlüssel,schuler.ID,SchuelerZusatzdaten.dat,11,Externe ID-Nr.,,
+Konfession,KR,"Gibt Schlüssel für Konfession aus. Kann bei Bedarf auch auf die Ausgabe von Text umgestellt werden.
+
+Konfessionsschlüssel für NRW-Schüler:
+ER - Evangelisch
+KR - Römisch-katholisch
+IR - islamisch
+HR - jüdisch
+OR - griechisch orthodox
+XO - sonstig orthodox
+AR - alevitisch
+MB - mennonitische Brüdergemeinde
+XR - sonstige
+OH - ohne
+
+Konfessionsschlüssel für Niedersachsen-Schüler:
+0 - ohne Angaben
+1 - Evangelisch
+3 - katholisch
+5 - alevitisch
+6 - islamisch
+7 - sonstige
+8 - ohne",Konfession,Darf wohl nicht verarbeitet werden gemäß dem Schema … inkompatibel zu aktuellen Datenfeldschemata Schüler Online und Schild,schuler.Religion_ID→k_religion.ID→ k_religion.ExportBez,SchuelerBasisdaten.dat,12,Konfession, Statistik-Kürzel,
+Jahr der 1. Einschulung,2006,,EinschulungsJahr,"Schueler.Einschulung.eintrittsdatum
+Datentyp ""Date"" statt Jahreszahl",schuler.Einschulungsjahr,SchuelerBasisdaten.dat,30,Einschulungsjahr,,
+,,,,Schueler.Auskunftssperre…,schueler.KeineAuskunft,,,,,
+,,,,Schueler.Impfung…,schueler.MasernImpfnachweis,,,,,
+,,,,Schueler.SchuelerReisender…,,,,,,
+,,,,,,,,,,
+Schüler*in - Kontaktdaten,,,,,,,,,,
+Anschrift,Mustermann-Straße 46,,Strasse,"Schueler.MeldeAnschrift.Strasse
+Schueler.Auslandsanschrift.Anschriftzone",schuler.Strassenname,SchuelerBasisdaten.dat,8,Straße,,
+,,,,Schueler.MeldeAnschrift.Hausnummer,schueler.HausNr,,,,,
+,,,,Schueler.MeldeAnschrift.HausnummerBuchstabeZusatzziffer,schueler.NausNrZusatz,,,,,
+,,,zu klären für SO 2.0!,Schueler.MeldeAnschrift.Zusatzangaben,,,,,,
+Staat des Wohnorts,D,"Länderkürzel des Staates in dem der Wohnort liegt (z.B. ""D"" für ""Deutschland"" oder ""NL"" für ""Niederlande"")",PLZStaat,Schueler.Staat.Nation,,,,,,
+Postleitzahl,48653,,Plz,Schueler.MeldeAnschrift.Postleitzahl,schueler.PLZ,SchuelerBasisdaten.dat,6,PLZ,,
+Wohnort,Coesfeld,,Wohnort,Schueler.MeldeAnschrift.Wohnort,schueler.Ort_ID→ k_ort.ID→ k_ort.Bezeichnung,SchuelerBasisdaten.dat,7,Ort,,
+Ortsteil im Wohnort,Lette,,Ortsteil,Schueler.MeldeAnschrift.WohnortFruehererGemeindename,schueler.Ortsteil_ID→k_ortsteil.ID → k_ortsteil.Bezeichnung,SchuelerZusatzdaten.dat,7,Ortsteil,,
+Gemeindekennzeichen des Kreises / der kreisfreien Stadt des Wohnorts,558,"3. bis 5. Stelle des Regionalschlüssels - siehe: https://de.wikipedia.org/wiki/Amtlicher_Gemeindeschl%C3%Bcssel (z.B. ""558"" für ""Kreis Coesfeld"")",Kreis (Gkz),Schueler.Staat.Kreis,schueler.Ort_ID→ k_ort.ID→ k_ort.Kreis,,,,,
+Kfz-Kennzeichen des Kreises / der kreisfreien Stadt des Wohnorts,COE,"KFZ-Kennzeichen des Kreises, in dem der Wohnort der Schüler*in liegt (z.B. ""COE"" für ""Kreis Coesfeld"")",Kreis (Kfz),-,,,,,,
+Kreis / kreisfreie Stadt des Wohnorts,558,"3. bis 5. Stelle des Regionalschlüssels - siehe: https://de.wikipedia.org/wiki/Amtlicher_Gemeindeschl%C3%Bcssel (z.B. ""558"" für ""Kreis Coesfeld"")",Landkreis,Schueler.Staat.Kreis,,,,,,
+Bundesland des Wohnorts,NW,"Länderkürzel für das Bundesland, in dem der Wohnort liegt (z.B. ""NW"" für ""Nordrhein-Westfalen"" oder ""NI"" für ""Niedersachsen"")",Bundesland des Wohnorts,Schueler.Staat.Bundesland,schueler.Ort_ID→ k_ort.ID→ k_ort.Land,,,,,
+Telefonnummer,+49 123 4567890,,Telefon,"Schueler.Kontaktmoeglichkeit (Telefon, E-Mail….)
+
+Art der Telefonnnummer wird von Schild generiert
+SO 2.0 muss ggfs. Modell anpassen um Array an Telefonnummern zu ermöglichen",schueler.Telefon,SchuelerZusatzdaten.dat,8,Telefon-Nr.,,
+Telefonnummer (zweite),+49 123 4567890,,Telefon 2,Schueler.Kontaktmoeglichkeit (Telefon,schueler.Fax,,SchuelerZusatzdaten.dat,25,Fax/Mobilnummer,
+E-Mail-Adresse,abc@def.de,,EMail,Schueler.Kontaktmoeglichkeit (Telefon,schueler.Email,,SchuelerZusatzdaten.dat,9,E-Mail,
+,,,,,,,,,,
+,,,Schüler*in - Migrationshintergrund,,,,,,,
+Migrationshintergrund vorhanden?,1,"0 = nein, 1 = ja
+
+Die Ausgabe der Werte kann über den Button ""Zuordnung spezieller Feldinhalte"" (Symbol in der Spalte ganz rechts) auf der Seite ""Datenexport"" -> ""Export Schema Anmeldungen"" individuell eingestellt werden.",Migration,???,schueler.Migrationshintergrund,,,,,
+Staatsangehörigkeit,0,"Die Ausgabe von Staatenwerten erfolgt im Format ""Staatenschlüssel (z.B. ""423"" für Afghanisch und ""0"" für Deutsch), kann bei Bedarf aber auch auf das Format ""Landeskennzeichen"" (z.B. ""AFG"" für Afghanisch oder ""D"" für Deutsch)  oder ""Ländername"" (z.B. ""Afghanisch"" oder ""Deutsch"") umgestellt werden.
+
+Die Ausgabe der Werte kann über den Button ""Zuordnung spezieller Feldinhalte"" (Symbol in der Spalte ganz rechts) auf der Seite ""Datenexport"" -> ""Export Schema Anmeldungen"" individuell eingestellt werden.",Staatsangehörigkeit,Schueler.NatuerlichePerson.Staatangehörigkeit…,schueler.StaatKrz,SchuelerBasisdaten.dat,10,1. Staatsangehörigkeit,,
+2. Staatsangehörigkeit,423,"Die Ausgabe von Staatenwerten erfolgt im Format ""Staatenschlüssel (z.B. ""423"" für Afghanisch und ""0"" für Deutsch), kann bei Bedarf aber auch auf das Format ""Landeskennzeichen"" (z.B. ""AFG"" für Afghanisch oder ""D"" für Deutsch)  oder ""Ländername"" (z.B. ""Afghanisch"" oder ""Deutsch"") umgestellt werden.
+
+Die Ausgabe der Werte kann über den Button ""Zuordnung spezieller Feldinhalte"" (Symbol in der Spalte ganz rechts) auf der Seite ""Datenexport"" -> ""Export Schema Anmeldungen"" individuell eingestellt werden.",2. Staatsangehörigkeit,Schueler.NatuerlichePerson.Staatangehörigkeit…,schueler.StaatKrz2,SchuelerZusatzdaten.dat,10,2. Staatsangehörigkeit,,
+Jahr der Jahr des Zuzugs nach Deutschland,2009,,Zuzugsjahr,???,schueler.JahrZuzug,SchuelerZusatzdaten.dat,51,Jahr des Zuzugs,,
+Geburtsland,423,"Die Ausgabe von Staatenwerten erfolgt im Format ""Staatenschlüssel (z.B. ""423"" für Afghanistan und ""0"" für Deutschland), kann bei Bedarf aber auch auf das Format ""Landeskennzeichen"" (z.B. ""AFG"" für Afghanistan oder ""D"" für Deutschland)  oder ""Ländername"" (z.B. ""Afghanistan"" oder ""Deutschland"") umgestellt werden.",Geburtsland,Schueler.Geburt.geburtsort.anschrift.staat,schueler.GeburtslandSchueler,SchuelerBasisdaten.dat,52,Geburtsland Schüler,,
+Geburtsland des Vaters,0,"Die Ausgabe von Staatenwerten erfolgt im Format ""Staatenschlüssel (z.B. ""423"" für Afghanistan und ""0"" für Deutschland), kann bei Bedarf aber auch auf das Format ""Landeskennzeichen"" (z.B. ""AFG"" für Afghanistan oder ""D"" für Deutschland)  oder ""Ländername"" (z.B. ""Afghanistan"" oder ""Deutschland"") umgestellt werden.",GeburtslandVater,GesetzlicherVertreter.Geburt.geburtsort.anschrift.staat,schueler.GeburtslandVater,SchuelerBasisdaten.dat,54,Geburtsland Vater,,
+Geburtsland der Mutter,187,"Die Ausgabe von Staatenwerten erfolgt im Format ""Staatenschlüssel (z.B. ""423"" für Afghanistan und ""0"" für Deutschland), kann bei Bedarf aber auch auf das Format ""Landeskennzeichen"" (z.B. ""AFG"" für Afghanistan oder ""D"" für Deutschland)  oder ""Ländername"" (z.B. ""Afghanistan"" oder ""Deutschland"") umgestellt werden.",GeburtslandMutter,GesetzlicherVertreter.Geburt.geburtsort.anschrift.staat,schueler.GeburtslandMutter,SchuelerBasisdaten.dat,53,Geburtsland Mutter,,
+In der Familie gesprochene Sprache,tk,"Die Ausgabe von Sprachen erfolgt im Format ""Schlüssel"" (z.B. ""tk"" für turkmenisch und ""de"" für deutsch), kann bei Bedarf aber auch auf das Format ""Text"" (z.B. ""turkmenisch"" für ""deutsch"") umgestellt werden.
+
+Die Ausgabe der Werte kann über den Button ""Zuordnung spezieller Feldinhalte"" (Symbol in der Spalte ganz rechts) auf der Seite ""Datenexport"" -> ""Export Schema Anmeldungen"" individuell eingestellt werden.",Verkehrssprache,schueler.verkehrssprache,schueler.VerkehrsspracheFamilie,SchuelerBasisdaten.dat,55,Verkehrssprache in der Familie,,
+,,,,,,,,,,
+Schüler*in - 1. Erziehungsberechtigte(r) / 1. Notfalladresse,,,,,,,,,,
+Anrede,F,"""F"" für ""Frau"", ""H"" für ""Herr""
+
+Die Ausgabe der Werte kann über den Button ""Zuordnung spezieller Feldinhalte"" (Symbol in der Spalte ganz rechts) auf der Seite ""Datenexport"" -> ""Export Schema Anmeldungen"" individuell eingestellt werden.",Ezb1_Anrede,GesetzlicherVertreter.NameNatuerlichePerson.anrede,,SchuelerErzieher.dat,5,Anrede 1. Person,,
+,,,,GesetzlicherVertreter.NameNatuerlichePerson.titel,,,,,,
+Vorname,Mama,,Ezb1_Vorname,GesetzlicherVertreter.NameNatuerlichePerson.vorname,,SchuelerErzieher.dat,8,Vorname 1. Person,,
+Nachname,Ante Portas,,Ezb1_Nachname,GesetzlicherVertreter.NameNatuerlichePerson.familienname,,SchuelerErzieher.dat,7,Nachname 1. Person,,
+,,,,GesetzlicherVertreter.NameNatuerlichePerson.geburtsname,,,,,,
+,,,,GesetzlicherVertreter.NameNatuerlichePerson.rufname,,,,,,
+Anschrift,Teststr. 1,,Ezb1_Strasse,GesetzlicherVertreter.Wohnort.Meldeanschrift.Strasse,,SchuelerErzieher.dat,13,Straße u. Hausnr.,,
+,,,,GesetzlicherVertreter.Wohnort.Meldeanschrift.Hausnummer,,,,,,
+,,,,GesetzlicherVertreter.Wohnort.Meldeanschrift.HausnummerBuchstabeZusatzziffer,,,,,,
+Staat des Wohnorts,D,"Länderkürzel des Staates in dem der Wohnort liegt (z.B. ""D"" für ""Deutschland"" oder ""NL"" für ""Niederlande"")",Ezb1_PlzStaat,GesetzlicherVertreter.Staat.Nation,,,,,,
+Postleitzahl des Wohnorts,32657,,Ezb1_Plz,GesetzlicherVertreter.Wohnort.Meldeanschrift.Postleitzahl,,SchuelerErzieher.dat,14,PLZ,,
+Wohnort,Lemgo,,Ezb1_Wohnort,GesetzlicherVertreter.Wohnort.Meldeanschrift.Wohnort,,SchuelerErzieher.dat,15,Ort,,
+Telefonummer,+49 1234 567890,,Ezb1_Telefon,GesetzlicherVertreter.Kontaktmoeglichkeit (Telefon, E-Mail….),,SchuelerTelefonnummern.dat,4,Telefon-Nummer,nur in Verbind mit Spalte 5 (Beschreibung) deckungsgleich mit Spalte 4 aus SchuelerErzieher.dat (Erzieherart) möglich
+E-Mail-Adresse,mama@schuelerIn.org,,Ezb1_EMail,GesetzlicherVertreter.Kontaktmoeglichkeit (Telefon, E-Mail….),,SchuelerErzieher.dat,17,E-Mail-Adresse 1. Person,
+Art der Sorgeberechtigtenrolle,MU,"Schlüssel für die Sorgeberechtigtenrolle
+
+MU = Mutter
+VA = Vater
+EL = Eltern
+ER = Erziehungsberechtigte(r)
+SO = Sorgeberechtigte(r)
+AN = Ansprechpartner(in)
+VO = Vormund
+GM = Großmutter
+GV = Großvater
+PF = Pflegeeltern
+BE = Betreuer(in)
+XX = sonstiges
+VJ = volljährig
+EH = Ehepartner(in)
+LG = Lebensgefährt(in)
+
+Die Ausgabe der Werte kann über den Button ""Zuordnung spezieller Feldinhalte"" (Symbol in der Spalte ganz rechts) auf der Seite ""Datenexport"" -> ""Export Schema Anmeldungen"" individuell eingestellt werden.",Ezb1_Sorgeberechtigt,GesetzlicherVertreter.gesetzlichervertreterschluessel,,SchuelerErzieher.dat,4,Erzieherart,,
+Schüler*in - 2. Erziehungsberechtigte(r) / 2. Notfalladresse,,,,,,,,,,
+Inhalt,Beispieldaten,Hinweise,Datenfeld in Schüler Online,Xschule / Xbildung,,Schild Datei,Spalte,Schild Feldname,,
+Anrede,H,"""F"" für ""Frau"", ""H"" für ""Herr""
+
+Die Ausgabe der Werte kann über den Button ""Zuordnung spezieller Feldinhalte"" (Symbol in der Spalte ganz rechts) auf der Seite ""Datenexport"" -> ""Export Schema Anmeldungen"" individuell eingestellt werden.",Ezb2_Anrede,GesetzlicherVertreter.NameNatuerlichePerson.anrede,,SchuelerErzieher.dat,"5
+9","Anrede 1. Person
+Anrede 2. Person",,
+,,,,GesetzlicherVertreter.NameNatuerlichePerson.titel,,,,,,
+Vorname,Papa,,Ezb2_Vorname,GesetzlicherVertreter.NameNatuerlichePerson.vorname,,SchuelerErzieher.dat,"8
+12","Vorname 1. Person
+Vorname 2. Person",,
+Nachname,Ante Portas,,Ezb2_Nachname,GesetzlicherVertreter.NameNatuerlichePerson.familienname,,SchuelerErzieher.dat,"7
+11","Nachname 1. Person
+Nachname 2. Person",,
+,,,,GesetzlicherVertreter.NameNatuerlichePerson.geburtsname,,,,,,
+,,,,GesetzlicherVertreter.NameNatuerlichePerson.fruehererFamilienname,,,,,,
+,,,,GesetzlicherVertreter.NameNatuerlichePerson.rufname,,,,,,
+Anschrift,Teststr. 1,,Ezb2_Strasse,GesetzlicherVertreter.Wohnort.Meldeanschrift.Strasse,,SchuelerErzieher.dat,13,Straße u. Hausnr.,,
+,,,,GesetzlicherVertreter.Wohnort.Meldeanschrift.Hausnummer,,,,,,
+,,,,GesetzlicherVertreter.Wohnort.Meldeanschrift.HausnummerBuchstabeZusatzziffer,,,,,,
+Staat des Wohnorts,D,"Länderkürzel des Staates in dem der Wohnort liegt (z.B. ""D"" für ""Deutschland"" oder ""NL"" für ""Niederlande"")",Ezb2_PlzStaat,GesetzlicherVertreter.Staat.Nation,,,,,,
+Postleitzahl des Wohnorts,32756,,Ezb2_Plz,GesetzlicherVertreter.Wohnort.Meldeanschrift.Postleitzahl,,SchuelerErzieher.dat,14,PLZ,,
+Wohnort,Detmold,,Ezb2_Wohnort,GesetzlicherVertreter.Wohnort.Meldeanschrift.Wohnort,,SchuelerErzieher.dat,15,Ort,,
+Telefonummer,+49 1234 567890,,Ezb2_Telefon,GesetzlicherVertreter.Kontaktmoeglichkeit (Telefon, E-Mail….),,SchuelerTelefonnummern.dat,4,"Telefon-Nummer
+
+nur in Verbind mit Spalte 5 (Beschreibung) deckungsgleich mit Spalte 4 aus SchuelerErzieher.dat (Erzieherart) möglich",
+E-Mail-Adresse,papa@schuelerIn.org,,Ezb2_EMail,GesetzlicherVertreter.Kontaktmoeglichkeit (Telefon, E-Mail….),,SchuelerErzieher.dat,"17
+19","E-Mail-Adresse 1. Person
+E-Mail-Adresse 2. Person",
+Art der Sorgeberechtigtenrolle,MU,"Schlüssel für die Sorgeberechtigtenrolle
+
+MU = Mutter
+VA = Vater
+EL = Eltern
+ER = Erziehungsberechtigte(r)
+SO = Sorgeberechtigte(r)
+AN = Ansprechpartner(in)
+VO = Vormund
+GM = Großmutter
+GV = Großvater
+PF = Pflegeeltern
+BE = Betreuer(in)
+XX = sonstiges
+VJ = volljährig
+EH = Ehepartner(in)
+LG = Lebensgefährt(in)
+
+Die Ausgabe der Werte kann über den Button ""Zuordnung spezieller Feldinhalte"" (Symbol in der Spalte ganz rechts) auf der Seite ""Datenexport"" -> ""Export Schema Anmeldungen"" individuell eingestellt werden.",Ezb2_Sorgeberechtigt,GesetzlicherVertreter.gesetzlichervertreterschluessel,,SchuelerErzieher.dat,4,Erzieherart,,
+Herkunftsschule,,,,,,,,,,
+Inhalt,Beispieldaten,Hinweise,Datenfeld in Schüler Online,Xschule / Xbildung,,Schild Datei,Spalte,Schild Feldname,,
+Schulnummer,123456,,abgebendeSchule_Schulnr,,,SchuelerBasisdaten.dat,18,Nr. der Stammschule,,
+Name der Schule,Marien-Berufskolleg,,abgebendeSchule,Schueler.BesuchteSchule.angabeSchule,,,,,,
+Schulform,BK,"Schlüssel der Schulform der Herkunftsschule (z.B. ""BK"" für Berufskolleg oder ""GY"" für Gymnasium)
+
+Die Ausgabe der Werte kann über den Button ""Zuordnung spezieller Feldinhalte"" (Symbol in der Spalte ganz rechts) auf der Seite ""Datenexport"" -> ""Export Schema Anmeldungen"" individuell eingestellt werden.",abgebendeSchule_Schulform,Schueler.BesuchteSchule.angabeSchule.Schulform,,,,,,
+Schulgliederung des besuchten Bildungsgangs,A01,"Die Ausgabe der Werte kann über den Button ""Zuordnung spezieller Feldinhalte"" (Symbol in der Spalte ganz rechts) auf der Seite ""Datenexport"" -> ""Export Schema Anmeldungen"" individuell eingestellt werden.",abgebendeSchule_Schulgliederung,Schueler.BesuchteSchule.angabeSchule.Bildungsgang,,SchuelerBasisdaten.dat,23,Gliederung,,
+besuchter Bildungsgang,A01/115/00,"Schlüssel zusammengesetzt aus <Schugliederung>/<1-3. Stelle Fachklasse>/<4. und 5. Stelle Fachklasse>
+
+Die Ausgabe der Werte kann über den Button ""Zuordnung spezieller Feldinhalte"" (Symbol in der Spalte ganz rechts) auf der Seite ""Datenexport"" -> ""Export Schema Anmeldungen"" individuell eingestellt werden.",abgebendeSchule_Bildungsgang,Schueler.BesuchteSchule.angabeSchule.Bildungsgang,,SchuelerBasisdaten.dat,26,Fachklasse,,
+besuchter Jahrgang,1,,abgebendeSchule_Jahrgang,Schueler.SchulJahrgang.Klassenstufe,,SchuelerBasisdaten.dat,21,Jahrgang,,
+besuchte Klasse,10a,,abgebendeSchule_Klasse,"???
+Ggfs. entbehrlich - könnte aber für Klassenbildung an aufnehmender Schule interessant sein",,SchuelerBasisdaten.dat,22,Klasse,,
+Schüler*in - Qualifikationen,,,,,,,,,,
+Inhalt,Beispieldaten,Hinweise,Datenfeld in Schüler Online,Xschule / Xbildung,,Schild Datei,Spalte,Schild Feldname,,
+zuletzt erreichter Schulabschluss,F,Schlüssel des Schulabschlusses,AbschlussSchule,Schulkind.Zeugnis.Niveau ???,,SchuelerBasisdaten.dat,49,Abschluss,,
+,,"Schulabschlüsse für NRW-Schüler*innen
+A = ohne Abschluss
+B = Hauptschulabschluss (Klasse 9)
+C = Hauptschulabschluss (Klasse 9) mit Versetzung nach Kl.10/Typ B
+D = Hauptschulabschluss (Klasse 10)
+F = Mittlerer Schulabschlus (Fachoberschulreife)
+G = Mittlerer Schulabschlus (Fachoberschulreife) mit Qualifikationsvermerk
+H = Fachhochschulreife (schulischer Teil)
+I = Berechtigung zum Besucht der Qualifikationsphase 1 (gymn. Oberstufe)
+J = Fachhochschulreife
+K = allgemeine Hochschulreife (Abitur)
+M = Förderschulabschluss (Schwerpunkt geistige Entwicklung)
+N = Förderschulabschluss (Schwerpunkt Lernen)
+O = Abgang aus Klasse 9 am Gymnasium mit Berechtigung zum Besuch der gymn. Oberstufe (Einführungsphase)
+P = Versetzungszeugnis der Klasse 11 (Fachoberschule)
+S = Hauptschulabschluss mit Berechtigung zum Besuch eines weiterführenden Bildungsgangs im Berufskolleg (nur für Internationale Förderklassen)",,,,,,,,
+,,"Schulabschlüsse für Niedersachsen-Schüler*innen
+AH = allgemeine Hochschulreife
+AL = Abschluss der Förderschule im Förderschwerpunkt Lernen
+EI = Erweiterter Sekundarabschluss I
+FH = Fachhochschulreife
+FT = Schulischer Teil der Fachhochschulreife
+GH = Fachgebundene Hochschulreife
+HA = Hauptschulabschluss
+HK = Sekundarabschluss I - Hauptschulabschluss
+OA = ohne erfolgreichen Besuch/Abschluss
+SI = Sekundarabschluss I - Realschulabschluss
+XA = sonstiger ausländischer Schulabschluss
+XS = sonstiger Schulabschluss",,,,,,,,
+höchster erreichter Schulabschluss,G,Schlüssel des Schulabschlusses (siehe oben),AbschlussSchuleMax,,,,,,,
+berufliche Qualifikationen,0,"Schlüssel der beruflichen Qualifikationen
+
+0 = keine oder geringe berufliche Kenntnisse
+1 = einjähriges Praktikum / freiwilliges soziales Jahr / Bundesfreiwilligendienst
+3 = abgeschlossene Berufsausbildung
+6 = Fachschulabschluss / Studium
+8 = mehrjährige einschlägige Berufserfahrung
+
+Mapping aus FAchklassenverzeichnis beachten ... und anpassen",AbschlussBeruf,,,,,,,
+Zeugnisschlüssel,"3G (NRW)
+3FH (Niedersachsen)","NRW
+siehe Schlüsselverzeichnis Berufskollegs
+(https://schulverwaltungsprogramme.msb.nrw.de/download/Berufskolleg.pdf - Ab Seite 2)
+
+Niedersachsen
+Zeichenketten aus AbschlussBeruf und Schulabschluss",AbschlussBerufSchule,,,,,,,
+Bezeichnung des bereits erlernten Berufs,Verfahrensmechaniker,"Wird beim Schüler erfragt wenn ""Erstberuf"" in der Übersichtsliste der Bildungsgänge bei der aufnehmenden Schule angehakt ist.",Erstberuf,,,,,,,
+Letzte Note im Fach Deutsch,2,Notenwert von 1 bis 6,Deutsch,,,,,,,
+Letzte Note im Fach Englisch,3,Notenwert von 1 bis 6,Englisch,,,,,,,
+Letzte Note im Fach Französisch,1,Notenwert von 1 bis 6,Französisch,,,,,,,
+Letzte Note im Fach Italienisch,2,Notenwert von 1 bis 6,Italienisch,,,,,,,
+Letzte Note im Fach Latein,4,Notenwert von 1 bis 6,Latein,,,,,,,
+Letzte Note im Fach Niederländisch,6,Notenwert von 1 bis 6,Niederländisch,,,,,,,
+Letzte Note im Fach Spanisch,8,Notenwert von 1 bis 6,Spanisch,,,,,,,
+Letzte Note im Fach Türkisch,5,Notenwert von 1 bis 6,Türkisch,,,,,,,
+Letzte Note im Fach Mathematik,4,Notenwert von 1 bis 6,Mathematik,,,,,,,
+Letzte Note im Fach Biologie,6,Notenwert von 1 bis 6,Biologie,,,,,,,
+Letzte Note im Fach Chemie,2,Notenwert von 1 bis 6,Chemie,,,,,,,
+Letzte Note im Fach Physik,1,Notenwert von 1 bis 6,Physik,,,,,,,
+Letzte Note im Fach Informatik,5,Notenwert von 1 bis 6,Informatik,,,,,,,
+Letzte Note im Fach Technik,6,Notenwert von 1 bis 6,Technik,,,,,,,
+Letzte Note im Fach Sport,4,Notenwert von 1 bis 6,Sport,,,,,,,
+Letzte Note im Fach Arbeitslehre,5,Notenwert von 1 bis 6,Arbeitslehre,,,,,,,
+Letzte Note im Fach Gestaltung,3,Notenwert von 1 bis 6,Gestaltung,,,,,,,
+Aufnehmende Schule,,,,,,,,,,
+Inhalt,Beispieldaten,Hinweise,Datenfeld in Schüler Online,Xschule / Xbildung,,Schild Datei,Spalte,Schild Feldname,,
+Schulnummmer,123456,,aufnehmendeSchule_Schulnr,Schueler.AufnehmendeSchule.angabeSchule,,SchuelerBasisdaten.dat,50,Schulnummer der aufnehmenden Schule,,
+Daten der Anmeldung,,,,,,,,,,
+Inhalt,Beispieldaten,Hinweise,Datenfeld in Schüler Online,Xschule / Xbildung,,Schild Datei,Spalte,Schild Feldname,,
+Schulgliederung des Bildungsgangs,"C03 (NRW)
+BS (Niedersachsen)",,aufnehmendeSchule_Schulgliederung,Schueler.AufnehmendeSchule… ???,,SchuelerBasisdaten.dat,23,Gliederung,,
+Bildungsgang,"C03/115/00 (NRW)
+BS/WAK/1T (Niedersachsen)","ist mit dem Datenfeld-Namen ""Bildungsgang"" ein 2. mal verfügbar
+
+Die Ausgabe der Werte kann über den Button ""Zuordnung spezieller Feldinhalte"" (Symbol in der Spalte ganz rechts) auf der Seite ""Datenexport"" -> ""Export Schema Anmeldungen"" individuell eingestellt werden.",aufnehmendeSchule_Bildungsgang,Schueler.AufnehmendeSchule… ???,,SchuelerBasisdaten.dat,26,Fachklasse,,
+Fachklasse des Bildungsgangs,"115 00 (NRW)
+WAK (Niedersachsen)",,aufnehmendeSchule_Fachklasse,Schueler.AufnehmendeSchule… ???,,,,,,
+Fachklasse des Bildungsgangs (2. Teil, nur Niedersachsen),AK,2. und 3. Stelle des Fachklassenschlüssels (sofern vorhanden),aufnehmendeSchule_Fachklasse(2),Schueler.AufnehmendeSchule… ???,,,,,
+Jahrgang des Bildungsgangs (nur Niedersachsen),1,Jahrgang im Bildungsgang (1,2,3 oder 4),aufnehmendeSchule_Jahrgang(NDS),Schueler.AufnehmendeSchule… ???,,,,
+Zeitform des Bildungsgangs,T,"Zeitform des Bildungsgangs
+
+Nordrhein-Westfalen
+T = Teilzeit
+V = Vollzeit
+A = Ausbildung (Duales System)
+
+Niedersachsen
+T = Teilzeit
+V = Vollzeit",aufnehmendeSchule_Organisationsform,Schueler.AufnehmendeSchule… ???,,,,,,
+Klasse,10V1,,aufnehmendeSchule_Klasse,Schueler.AufnehmendeSchule… ???,,SchuelerBasisdaten.dat,22,Klasse,,
+Jahrgang,1,,KlasseJahrgang,Schueler.AufnehmendeSchule.Schuljahrgang ???,,SchuelerBasisdaten.dat,21,Jahrgang,,
+Organisationsform der Klasse,V,"Evtl. gar nicht erforderlich in Schüler Online
+
+Zeitform der Klasse
+
+Nordrhein-Westfalen
+T = Teilzeit
+V = Vollzeit
+
+NRW - nur für Schulgliederungen A01-A04 und A13
+A = Teilzeitunterricht ohne Blockunterricht (Klasse)
+C = Teilzeitunterricht ohne Blockunterricht (Bezirksfachklasse)
+I = Teilzeitunterricht ohne Blockunterricht (Landesfachklasse)
+B = Blockunterricht - z.Zt. im Unterricht (Klasse)
+D = Blockunterricht - z.Zt. im Unterricht (Bezirksfachklasse)
+O = Blockunterricht - z.Zt. im Unterricht (Landesfachklasse)
+E = Blockunterricht - z.Zt. nicht im Unterricht (Klasse)
+F = Blockunterricht - z.Zt. nicht im Unterricht (Bezirksfachklasse)
+P = Blockunterricht - z.Zt. nicht im Unterricht (Landesfachklasse)
+K = Ganztagsunterricht (Klasse)
+L = Ganztagsunterricht (Bezirksfachklasse)
+M = Ganztagsunterricht (Landesfachklasse)
+
+Niedersachsen
+T = Teilzeit
+V = Vollzeit",Zeitform,Schueler.AufnehmendeSchule… ???,,SchuelerBasisdaten.dat,24,Klassen-Organisationsform,,
+Datum der Anmeldung,13.02.2022,"Die Ausgabe von Datumswerten erfolgt im Format ""TT.MM.JJJJ"", kann bei Bedarf aber auch auf das Format ""JJJJMMTT"" oder ""TT.MM.JJ"" umgestellt werden.",Anmeldedatum,,,SchuelerZusatzdaten.dat,22,Datum der Anmeldung,,
+"Datum der Aufnahme (=Status ""aufgenommen"" gesetzt)",05.03.2022,"Die Ausgabe von Datumswerten erfolgt im Format ""TT.MM.JJJJ"", kann bei Bedarf aber auch auf das Format ""JJJJMMTT"" oder ""TT.MM.JJ"" umgestellt werden.",Aufnahmedatum,,,SchuelerBasisdaten.dat,13,Aufnahmedatum,,
+Aufnahmestatus,1,"Aufnahmestatus der Anmeldung an der Schule
+
+0 = angemeldet
+1 = aufgenommen
+2 = Warteliste
+3 = abgelehnt
+4 = nicht erschienen
+5 = abgemeldet durch Schüler*in / Betrieb
+6 = Rückmeldung / Schülerzusage
+
+Die Ausgabe der Werte kann über den Button ""Zuordnung spezieller Feldinhalte"" (Symbol in der Spalte ganz rechts) auf der Seite ""Datenexport"" -> ""Export Schema Anmeldungen"" individuell eingestellt werden.",Aufnahmestatus,,,,,,,
+Unterlagen vollständig?,1,"0 = nein, 1 = ja
+
+Die Ausgabe der Werte kann über den Button ""Zuordnung spezieller Feldinhalte"" (Symbol in der Spalte ganz rechts) auf der Seite ""Datenexport"" -> ""Export Schema Anmeldungen"" individuell eingestellt werden.",Unterlagen,,,,,,,
+Beratung erfolgt?,1,"0 = nein, 1 = ja
+
+Die Ausgabe der Werte kann über den Button ""Zuordnung spezieller Feldinhalte"" (Symbol in der Spalte ganz rechts) auf der Seite ""Datenexport"" -> ""Export Schema Anmeldungen"" individuell eingestellt werden.",Beratung,,,,,,,
+Inhalt des internen Notizfelds zur Anmeldung,18.05.2022 Zeugniskopie angefordert,,Notiz,,,,,,,
+Beginn des Beschulungszeitraums,01.08.2022,"Die Ausgabe von Datumswerten erfolgt im Format ""TT.MM.JJJJ"", kann bei Bedarf aber auch auf das Format ""JJJJMMTT"" oder ""TT.MM.JJ"" umgestellt werden.
+
+ACHTUNG: Gesondert erfasst wird zusätzlich noch der Zeitraum des Ausbildungsvertrags bei Dualer Ausbildung - siehe Abschnitt Ausbildungsbetrieb",Ausbildungsbeginn,,,,,,,
+Ende des Beschulungszeitraums,31.07.2025,"Die Ausgabe von Datumswerten erfolgt im Format ""TT.MM.JJJJ"", kann bei Bedarf aber auch auf das Format ""JJJJMMTT"" oder ""TT.MM.JJ"" umgestellt werden.
+
+ACHTUNG: Gesondert erfasst wird zusätzlich noch der Zeitraum des Ausbildungsvertrags bei Dualer Ausbildung - siehe Abschnitt Ausbildungsbetrieb",Ausbildungsende,,,,,,,
+1. Schultag im Beschulungszeitraum,13.09.2022,"Die Ausgabe von Datumswerten erfolgt im Format ""TT.MM.JJJJ"", kann bei Bedarf aber auch auf das Format ""JJJJMMTT"" oder ""TT.MM.JJ"" umgestellt werden.",Schulbeginn,,,SchuelerZusatzdaten.dat,21,BeginnBildungsgang,,
+Dauer des Bildungsgangs in Monaten,36,,Dauer,,,,,,,
+Name der Klassenlehrkraft,Frau Meier,,Klassenlehrer,,,,,,,
+Antwort auf die Frage zur 1. Fremdsprache,Französisch,Die Zusatzfragen und verfügbaren Antwortoptionen zur Anmeldung können von den Schulen in den Details der Bildungsgänge angegeben werden.,Fremdsprache1,,,,,,,
+Antwort auf die Frage zur 2. Fremdsprache,Englisch,,Fremdsprache2,,,,,,,
+Antwort auf die Frage zum Pflichtfach,Biologie,,Pflichtfach,,,,,,,
+Antwort auf die Frage zum Schwerpunkt,Büro-Systemtechnik,,Schwerpunkt,,,,,,,
+Antwort auf die Frage zur Differenzierung (1. Priorität),Außenhandel,,Differenzierung,,,,,,,
+Antwort auf die Frage zur Differenzierung (2. Priorität),Bank- und Finanzwirtschaft/Touristik/Logistik,,Differenzierung2,,,,,,,
+Antwort auf die Frage zum Angebot,Blockunterricht (bevorzugt),,Angebot,,,,,,,
+Antwort auf die Frage zum Grundkurs,Deutsch,,Grundkurs,,,,,,,
+Antwort auf die Frage zum Leistungskurs,Mathematik,,Leistungskurs,,,,,,,
+Antwort auf die Frage zur Organisation,Tablet/Notebook-Klasse,,Organisation,,,,,,,
+Antwort auf die Frage zur Fachrichtung,Sozialwesen - Erzieher*in,,Fachrichtung,,,,,,,
+Ausbildungsbetrieb,,,,,,,,,,
+Inhalt,Beispieldaten,Hinweise,Datenfeld in Schüler Online,Xschule / Xbildung,,Schild Datei,Spalte,Schild Feldname,,
+Name,Meier GmbH,,BetriebName,,,SchuelerAdressen.dat,5,Name1,,
+Anschrift,Musterstr. 169,,BetriebStrasse,,,SchuelerAdressen.dat,7,Straße,,
+Staat des Betriebsstandorts,D,"Länderkürzel des Staates in dem der Ort liegt (z.B. ""D"" für ""Deutschland"" oder ""NL"" für ""Niederlande"")",BetriebPlzStaat,,,,,,,
+Postleitzahl des Betriebsstandorts,32657,,BetriebPlz,,,SchuelerAdressen.dat,8,PLZ,,
+Betriebsstandort,Lemgo,,BetriebOrt,,,SchuelerAdressen.dat,9,Ort,,
+Telefonnummer,+49 1234 567890,,BetriebTelefon,,,SchuelerAdressen.dat,10,1. Telefon-Nr.,,
+Faxnummer,+49 1234 567890,,BetriebFax,,,SchuelerAdressen.dat,21,Fax-Nummer des Betriebs,,
+E-Mail-Adresse,betrieb@berufsschule.de,,BetriebEmail,,,SchuelerAdressen.dat,12,E-Mail,,
+Name des Ansprechpartners für die Berufsschule,Meierjohann,,BetriebKontakt,,,SchuelerAdressen.dat,13,Betreuer Nachname,,
+Von Schule zugeordneter externer Schlüssel,ABC123,"Diesen Schlüssel kann jede Schule in Schüler Online für jeden Betrieb vergeben. Berufsbildende Schulen können die Schlüssel des Betriebs unter ""Administration"" -> ""Betriebe"" -> ""Übersichtsliste"" in den Details des Betriebs im Feld ""Importschlüssel"" einsehen und bearbeiten.",BetriebeIdExtern,,,SchuelerAdressen.dat,26,SchILD-Adress-ID,,
+Schlüssel in der Schüler Online-Datenbank,123456,"Der Schlüssel wird jedem Betrieb automatisch in Schüler Online vergeben. Berufsbildende Schulen können die Schlüssel des Betriebs unter ""Administration"" -> ""Betriebe"" -> ""Übersichtsliste"" in den Details des Betriebs im Feld ""SO-Schlüssel"" einsehen.",BetriebeIdKrz,,,SchuelerAdressen.dat,27,externe Adress-ID,,
+Beginn des Ausbildungsvertrags,17.05.2022,"Die Ausgabe von Datumswerten erfolgt im Format ""TT.MM.JJJJ"", kann bei Bedarf aber auch auf das Format ""JJJJMMTT"" oder ""TT.MM.JJ"" umgestellt werden.",BetriebAusbildungsBeginn,,,SchuelerAdressen.dat,18.01.1900,Vertragsbeginn,,
+Ende des Ausbildungsvertrags,19.07.2025,"Die Ausgabe von Datumswerten erfolgt im Format ""TT.MM.JJJJ"", kann bei Bedarf aber auch auf das Format ""JJJJMMTT"" oder ""TT.MM.JJ"" umgestellt werden.",BetriebAusbildungsEnde,,,SchuelerAdressen.dat,19.01.1900,Vertragsende,,
+Hinweise des Ausbildungsbetriebs für die Berufsschule,Bitte Berufsschultage am Montag und Dienstag einplanen,,InfoVomBetrieb,,,,,,,
+Sonstiges,,,,,,,,,,
+Inhalt,Beispieldaten,Hinweise,Datenfeld in Schüler Online,Xschule / Xbildung,,Schild Datei,Spalte,Schild Feldname,,
+Nummer des Datensatzes in der Exportdatei (forlaufend ab 1),13,,laufende Nummer,,,,,,,
+Aktuelles Tagesdatum,18.03.2022,,Tagesdatum,Tagesdatum,,,,,,
