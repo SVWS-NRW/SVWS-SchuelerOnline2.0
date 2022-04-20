@@ -73,7 +73,7 @@ SO 2.0 muss ggfs. Modell anpassen um Array an Telefonnummern zu ermöglichen",sc
 Telefonnummer (zweite),+49 123 4567890,,Telefon 2,Schueler.Kontaktmoeglichkeit (Telefon,schueler.Fax,,SchuelerZusatzdaten.dat,25,Fax/Mobilnummer,
 E-Mail-Adresse,abc@def.de,,EMail,Schueler.Kontaktmoeglichkeit (Telefon,schueler.Email,,SchuelerZusatzdaten.dat,9,E-Mail,
 ,,,,,,,,,,
-,,,Schüler*in - Migrationshintergrund,,,,,,,
+Schüler*in - Migrationshintergrund,,,,,,,,,,
 Migrationshintergrund vorhanden?,1,"0 = nein, 1 = ja
 
 Die Ausgabe der Werte kann über den Button ""Zuordnung spezieller Feldinhalte"" (Symbol in der Spalte ganz rechts) auf der Seite ""Datenexport"" -> ""Export Schema Anmeldungen"" individuell eingestellt werden.",Migration,???,schueler.Migrationshintergrund,,,,,
@@ -94,20 +94,20 @@ Die Ausgabe der Werte kann über den Button ""Zuordnung spezieller Feldinhalte""
 Schüler*in - 1. Erziehungsberechtigte(r) / 1. Notfalladresse,,,,,,,,,,
 Anrede,F,"""F"" für ""Frau"", ""H"" für ""Herr""
 
-Die Ausgabe der Werte kann über den Button ""Zuordnung spezieller Feldinhalte"" (Symbol in der Spalte ganz rechts) auf der Seite ""Datenexport"" -> ""Export Schema Anmeldungen"" individuell eingestellt werden.",Ezb1_Anrede,GesetzlicherVertreter.NameNatuerlichePerson.anrede,,SchuelerErzieher.dat,5,Anrede 1. Person,,
-,,,,GesetzlicherVertreter.NameNatuerlichePerson.titel,,,,,,
-Vorname,Mama,,Ezb1_Vorname,GesetzlicherVertreter.NameNatuerlichePerson.vorname,,SchuelerErzieher.dat,8,Vorname 1. Person,,
-Nachname,Ante Portas,,Ezb1_Nachname,GesetzlicherVertreter.NameNatuerlichePerson.familienname,,SchuelerErzieher.dat,7,Nachname 1. Person,,
+Die Ausgabe der Werte kann über den Button ""Zuordnung spezieller Feldinhalte"" (Symbol in der Spalte ganz rechts) auf der Seite ""Datenexport"" -> ""Export Schema Anmeldungen"" individuell eingestellt werden.",Ezb1_Anrede,GesetzlicherVertreter.NameNatuerlichePerson.anrede,schueler.ID = schuelererzadr.Schueler_ID → schuelererzadr.Anrede1,SchuelerErzieher.dat,5,Anrede 1. Person,,
+,,,,GesetzlicherVertreter.NameNatuerlichePerson.titel,schueler.ID = schuelererzadr.Schueler_ID → schuelererzadr.Titel1,,,,,
+Vorname,Mama,,Ezb1_Vorname,GesetzlicherVertreter.NameNatuerlichePerson.vorname,schueler.ID = schuelererzadr.Schueler_ID → schuelererzadr.Vorname1,SchuelerErzieher.dat,8,Vorname 1. Person,,
+Nachname,Ante Portas,,Ezb1_Nachname,GesetzlicherVertreter.NameNatuerlichePerson.familienname,schueler.ID = schuelererzadr.Schueler_ID → schuelererzadr.Name1,SchuelerErzieher.dat,7,Nachname 1. Person,,
 ,,,,GesetzlicherVertreter.NameNatuerlichePerson.geburtsname,,,,,,
 ,,,,GesetzlicherVertreter.NameNatuerlichePerson.rufname,,,,,,
-Anschrift,Teststr. 1,,Ezb1_Strasse,GesetzlicherVertreter.Wohnort.Meldeanschrift.Strasse,,SchuelerErzieher.dat,13,Straße u. Hausnr.,,
-,,,,GesetzlicherVertreter.Wohnort.Meldeanschrift.Hausnummer,,,,,,
-,,,,GesetzlicherVertreter.Wohnort.Meldeanschrift.HausnummerBuchstabeZusatzziffer,,,,,,
+Anschrift,Teststr. 1,,Ezb1_Strasse,GesetzlicherVertreter.Wohnort.Meldeanschrift.Strasse,schueler.ID = schuelererzadr.Schueler_ID → schuelererzadr.ErzStrassenname,SchuelerErzieher.dat,13,Straße u. Hausnr.,,
+,,,,GesetzlicherVertreter.Wohnort.Meldeanschrift.Hausnummer,schueler.ID = schuelererzadr.Schueler_ID → schuelererzadr.ErzHausNr,,,,,
+,,,,GesetzlicherVertreter.Wohnort.Meldeanschrift.HausnummerBuchstabeZusatzziffer,schueler.ID = schuelererzadr.Schueler_ID → schuelererzadr.ErzHausNrZusatz,,,,,
 Staat des Wohnorts,D,"Länderkürzel des Staates in dem der Wohnort liegt (z.B. ""D"" für ""Deutschland"" oder ""NL"" für ""Niederlande"")",Ezb1_PlzStaat,GesetzlicherVertreter.Staat.Nation,,,,,,
-Postleitzahl des Wohnorts,32657,,Ezb1_Plz,GesetzlicherVertreter.Wohnort.Meldeanschrift.Postleitzahl,,SchuelerErzieher.dat,14,PLZ,,
-Wohnort,Lemgo,,Ezb1_Wohnort,GesetzlicherVertreter.Wohnort.Meldeanschrift.Wohnort,,SchuelerErzieher.dat,15,Ort,,
+Postleitzahl des Wohnorts,32657,,Ezb1_Plz,GesetzlicherVertreter.Wohnort.Meldeanschrift.Postleitzahl,schueler.ID = schuelererzadr.Schueler_ID → schuelererzadr.ErzPLZ,SchuelerErzieher.dat,14,PLZ,,
+Wohnort,Lemgo,,Ezb1_Wohnort,GesetzlicherVertreter.Wohnort.Meldeanschrift.Wohnort,schueler.ID = schuelererzadr.Schueler_ID → schuelererzadr.ErzOrt_ID → k_ort.ID→ k_ort.Bezeichnung,SchuelerErzieher.dat,15,Ort,,
 Telefonummer,+49 1234 567890,,Ezb1_Telefon,GesetzlicherVertreter.Kontaktmoeglichkeit (Telefon, E-Mail….),,SchuelerTelefonnummern.dat,4,Telefon-Nummer,nur in Verbind mit Spalte 5 (Beschreibung) deckungsgleich mit Spalte 4 aus SchuelerErzieher.dat (Erzieherart) möglich
-E-Mail-Adresse,mama@schuelerIn.org,,Ezb1_EMail,GesetzlicherVertreter.Kontaktmoeglichkeit (Telefon, E-Mail….),,SchuelerErzieher.dat,17,E-Mail-Adresse 1. Person,
+E-Mail-Adresse,mama@schuelerIn.org,,Ezb1_EMail,GesetzlicherVertreter.Kontaktmoeglichkeit (Telefon,schueler.ID = schuelererzadr.Schueler_ID → schuelererzadr.ErzEmail,,SchuelerErzieher.dat,17,E-Mail-Adresse 1. Person,
 Art der Sorgeberechtigtenrolle,MU,"Schlüssel für die Sorgeberechtigtenrolle
 
 MU = Mutter
@@ -126,9 +126,9 @@ VJ = volljährig
 EH = Ehepartner(in)
 LG = Lebensgefährt(in)
 
-Die Ausgabe der Werte kann über den Button ""Zuordnung spezieller Feldinhalte"" (Symbol in der Spalte ganz rechts) auf der Seite ""Datenexport"" -> ""Export Schema Anmeldungen"" individuell eingestellt werden.",Ezb1_Sorgeberechtigt,GesetzlicherVertreter.gesetzlichervertreterschluessel,,SchuelerErzieher.dat,4,Erzieherart,,
+Die Ausgabe der Werte kann über den Button ""Zuordnung spezieller Feldinhalte"" (Symbol in der Spalte ganz rechts) auf der Seite ""Datenexport"" -> ""Export Schema Anmeldungen"" individuell eingestellt werden.",Ezb1_Sorgeberechtigt,GesetzlicherVertreter.gesetzlichervertreterschluessel,schueler.ID = schuelererzadr.Schueler_ID → schuelererzadr.ErzieherArt_ID (vgl. k_erzieherart.ID und k_erzieherart.EportBez),SchuelerErzieher.dat,4,Erzieherart,,
+,,,,,,,,,,
 Schüler*in - 2. Erziehungsberechtigte(r) / 2. Notfalladresse,,,,,,,,,,
-Inhalt,Beispieldaten,Hinweise,Datenfeld in Schüler Online,Xschule / Xbildung,,Schild Datei,Spalte,Schild Feldname,,
 Anrede,H,"""F"" für ""Frau"", ""H"" für ""Herr""
 
 Die Ausgabe der Werte kann über den Button ""Zuordnung spezieller Feldinhalte"" (Symbol in der Spalte ganz rechts) auf der Seite ""Datenexport"" -> ""Export Schema Anmeldungen"" individuell eingestellt werden.",Ezb2_Anrede,GesetzlicherVertreter.NameNatuerlichePerson.anrede,,SchuelerErzieher.dat,"5
@@ -175,23 +175,23 @@ EH = Ehepartner(in)
 LG = Lebensgefährt(in)
 
 Die Ausgabe der Werte kann über den Button ""Zuordnung spezieller Feldinhalte"" (Symbol in der Spalte ganz rechts) auf der Seite ""Datenexport"" -> ""Export Schema Anmeldungen"" individuell eingestellt werden.",Ezb2_Sorgeberechtigt,GesetzlicherVertreter.gesetzlichervertreterschluessel,,SchuelerErzieher.dat,4,Erzieherart,,
+,,,,,,,,,,
 Herkunftsschule,,,,,,,,,,
-Inhalt,Beispieldaten,Hinweise,Datenfeld in Schüler Online,Xschule / Xbildung,,Schild Datei,Spalte,Schild Feldname,,
-Schulnummer,123456,,abgebendeSchule_Schulnr,,,SchuelerBasisdaten.dat,18,Nr. der Stammschule,,
-Name der Schule,Marien-Berufskolleg,,abgebendeSchule,Schueler.BesuchteSchule.angabeSchule,,,,,,
+Schulnummer,123456,,abgebendeSchule_Schulnr,,eigeneschule.SchulNr,SchuelerBasisdaten.dat,18,Nr. der Stammschule,,
+Name der Schule,Marien-Berufskolleg,,abgebendeSchule,Schueler.BesuchteSchule.angabeSchule,eigeneschule.Bezeichnung1 + eigeneschule.Bezeichnung2 eigeneschule.Bezeichnung3,,,,,
 Schulform,BK,"Schlüssel der Schulform der Herkunftsschule (z.B. ""BK"" für Berufskolleg oder ""GY"" für Gymnasium)
 
-Die Ausgabe der Werte kann über den Button ""Zuordnung spezieller Feldinhalte"" (Symbol in der Spalte ganz rechts) auf der Seite ""Datenexport"" -> ""Export Schema Anmeldungen"" individuell eingestellt werden.",abgebendeSchule_Schulform,Schueler.BesuchteSchule.angabeSchule.Schulform,,,,,,
-Schulgliederung des besuchten Bildungsgangs,A01,"Die Ausgabe der Werte kann über den Button ""Zuordnung spezieller Feldinhalte"" (Symbol in der Spalte ganz rechts) auf der Seite ""Datenexport"" -> ""Export Schema Anmeldungen"" individuell eingestellt werden.",abgebendeSchule_Schulgliederung,Schueler.BesuchteSchule.angabeSchule.Bildungsgang,,SchuelerBasisdaten.dat,23,Gliederung,,
+Die Ausgabe der Werte kann über den Button ""Zuordnung spezieller Feldinhalte"" (Symbol in der Spalte ganz rechts) auf der Seite ""Datenexport"" -> ""Export Schema Anmeldungen"" individuell eingestellt werden.",abgebendeSchule_Schulform,Schueler.BesuchteSchule.angabeSchule.Schulform,eigeneschule.SchulformKrz,,,,,
+Schulgliederung des besuchten Bildungsgangs,A01,"Die Ausgabe der Werte kann über den Button ""Zuordnung spezieller Feldinhalte"" (Symbol in der Spalte ganz rechts) auf der Seite ""Datenexport"" -> ""Export Schema Anmeldungen"" individuell eingestellt werden.",abgebendeSchule_Schulgliederung,Schueler.BesuchteSchule.angabeSchule.Bildungsgang,schueler.Schuler_ID & Schuljahresabschnitts_ID → schulerlernabschnittsdaten.ASDSchulgliederung,SchuelerBasisdaten.dat,23,Gliederung,,
 besuchter Bildungsgang,A01/115/00,"Schlüssel zusammengesetzt aus <Schugliederung>/<1-3. Stelle Fachklasse>/<4. und 5. Stelle Fachklasse>
 
 Die Ausgabe der Werte kann über den Button ""Zuordnung spezieller Feldinhalte"" (Symbol in der Spalte ganz rechts) auf der Seite ""Datenexport"" -> ""Export Schema Anmeldungen"" individuell eingestellt werden.",abgebendeSchule_Bildungsgang,Schueler.BesuchteSchule.angabeSchule.Bildungsgang,,SchuelerBasisdaten.dat,26,Fachklasse,,
-besuchter Jahrgang,1,,abgebendeSchule_Jahrgang,Schueler.SchulJahrgang.Klassenstufe,,SchuelerBasisdaten.dat,21,Jahrgang,,
+besuchter Jahrgang,1,,abgebendeSchule_Jahrgang,Schueler.SchulJahrgang.Klassenstufe,schueler.Schuler_ID & Schuljahresabschnitts_ID → schulerlernabschnittsdaten.ASDJahrgang ,SchuelerBasisdaten.dat,21,Jahrgang,,
 besuchte Klasse,10a,,abgebendeSchule_Klasse,"???
-Ggfs. entbehrlich - könnte aber für Klassenbildung an aufnehmender Schule interessant sein",,SchuelerBasisdaten.dat,22,Klasse,,
+Ggfs. entbehrlich - könnte aber für Klassenbildung an aufnehmender Schule interessant sein",schueler.Schuler_ID & Schuljahresabschnitts_ID → → schulerlernabschnittsdaten.Klassen_ID → klassen.ID → klassen.ASDKlasse oder klassen.Klasse,SchuelerBasisdaten.dat,22,Klasse,,
+,,,,,,,,,,
 Schüler*in - Qualifikationen,,,,,,,,,,
-Inhalt,Beispieldaten,Hinweise,Datenfeld in Schüler Online,Xschule / Xbildung,,Schild Datei,Spalte,Schild Feldname,,
-zuletzt erreichter Schulabschluss,F,Schlüssel des Schulabschlusses,AbschlussSchule,Schulkind.Zeugnis.Niveau ???,,SchuelerBasisdaten.dat,49,Abschluss,,
+zuletzt erreichter Schulabschluss,F,Schlüssel des Schulabschlusses,AbschlussSchule,Schulkind.Zeugnis.Niveau ???,schueler.LetzterAllgAbschluss,SchuelerBasisdaten.dat,49,Abschluss,,
 ,,"Schulabschlüsse für NRW-Schüler*innen
 A = ohne Abschluss
 B = Hauptschulabschluss (Klasse 9)
@@ -230,7 +230,7 @@ berufliche Qualifikationen,0,"Schlüssel der beruflichen Qualifikationen
 6 = Fachschulabschluss / Studium
 8 = mehrjährige einschlägige Berufserfahrung
 
-Mapping aus FAchklassenverzeichnis beachten ... und anpassen",AbschlussBeruf,,,,,,,
+Mapping aus FAchklassenverzeichnis beachten ... und anpassen",AbschlussBeruf,,Bei `3`→ schueler.Berufsabschluss oder schueler.HatBerufsausbildung (?),,,,,
 Zeugnisschlüssel,"3G (NRW)
 3FH (Niedersachsen)","NRW
 siehe Schlüsselverzeichnis Berufskollegs
@@ -238,29 +238,29 @@ siehe Schlüsselverzeichnis Berufskollegs
 
 Niedersachsen
 Zeichenketten aus AbschlussBeruf und Schulabschluss",AbschlussBerufSchule,,,,,,,
-Bezeichnung des bereits erlernten Berufs,Verfahrensmechaniker,"Wird beim Schüler erfragt wenn ""Erstberuf"" in der Übersichtsliste der Bildungsgänge bei der aufnehmenden Schule angehakt ist.",Erstberuf,,,,,,,
-Letzte Note im Fach Deutsch,2,Notenwert von 1 bis 6,Deutsch,,,,,,,
-Letzte Note im Fach Englisch,3,Notenwert von 1 bis 6,Englisch,,,,,,,
-Letzte Note im Fach Französisch,1,Notenwert von 1 bis 6,Französisch,,,,,,,
-Letzte Note im Fach Italienisch,2,Notenwert von 1 bis 6,Italienisch,,,,,,,
-Letzte Note im Fach Latein,4,Notenwert von 1 bis 6,Latein,,,,,,,
-Letzte Note im Fach Niederländisch,6,Notenwert von 1 bis 6,Niederländisch,,,,,,,
-Letzte Note im Fach Spanisch,8,Notenwert von 1 bis 6,Spanisch,,,,,,,
-Letzte Note im Fach Türkisch,5,Notenwert von 1 bis 6,Türkisch,,,,,,,
-Letzte Note im Fach Mathematik,4,Notenwert von 1 bis 6,Mathematik,,,,,,,
-Letzte Note im Fach Biologie,6,Notenwert von 1 bis 6,Biologie,,,,,,,
-Letzte Note im Fach Chemie,2,Notenwert von 1 bis 6,Chemie,,,,,,,
-Letzte Note im Fach Physik,1,Notenwert von 1 bis 6,Physik,,,,,,,
-Letzte Note im Fach Informatik,5,Notenwert von 1 bis 6,Informatik,,,,,,,
-Letzte Note im Fach Technik,6,Notenwert von 1 bis 6,Technik,,,,,,,
-Letzte Note im Fach Sport,4,Notenwert von 1 bis 6,Sport,,,,,,,
-Letzte Note im Fach Arbeitslehre,5,Notenwert von 1 bis 6,Arbeitslehre,,,,,,,
-Letzte Note im Fach Gestaltung,3,Notenwert von 1 bis 6,Gestaltung,,,,,,,
-Aufnehmende Schule,,,,,,,,,,
-Inhalt,Beispieldaten,Hinweise,Datenfeld in Schüler Online,Xschule / Xbildung,,Schild Datei,Spalte,Schild Feldname,,
-Schulnummmer,123456,,aufnehmendeSchule_Schulnr,Schueler.AufnehmendeSchule.angabeSchule,,SchuelerBasisdaten.dat,50,Schulnummer der aufnehmenden Schule,,
+Bezeichnung des bereits erlernten Berufs,Verfahrensmechaniker,"Wird beim Schüler erfragt wenn ""Erstberuf"" in der Übersichtsliste der Bildungsgänge bei der aufnehmenden Schule angehakt ist.",Erstberuf,,Schueler.LetzterBerufsAbschluss ,,,,,
+Letzte Note im Fach Deutsch,2,Notenwert von 1 bis 6,Deutsch,,eigeneschule_faecher.FachKRZ = D → eigeneschule_faecher.ID->(mit Abschnitt_ID) schuelerleistungsdaten.NotenKrz,,,,,
+Letzte Note im Fach Englisch,3,Notenwert von 1 bis 6,Englisch,,analog D,,,,,
+Letzte Note im Fach Französisch,1,Notenwert von 1 bis 6,Französisch,,analog D,,,,,
+Letzte Note im Fach Italienisch,2,Notenwert von 1 bis 6,Italienisch,,analog D,,,,,
+Letzte Note im Fach Latein,4,Notenwert von 1 bis 6,Latein,,analog D,,,,,
+Letzte Note im Fach Niederländisch,6,Notenwert von 1 bis 6,Niederländisch,,analog D,,,,,
+Letzte Note im Fach Spanisch,8,Notenwert von 1 bis 6,Spanisch,,analog D,,,,,
+Letzte Note im Fach Türkisch,5,Notenwert von 1 bis 6,Türkisch,,analog D,,,,,
+Letzte Note im Fach Mathematik,4,Notenwert von 1 bis 6,Mathematik,,analog D,,,,,
+Letzte Note im Fach Biologie,6,Notenwert von 1 bis 6,Biologie,,analog D,,,,,
+Letzte Note im Fach Chemie,2,Notenwert von 1 bis 6,Chemie,,analog D,,,,,
+Letzte Note im Fach Physik,1,Notenwert von 1 bis 6,Physik,,analog D,,,,,
+Letzte Note im Fach Informatik,5,Notenwert von 1 bis 6,Informatik,,analog D,,,,,
+Letzte Note im Fach Technik,6,Notenwert von 1 bis 6,Technik,,analog D,,,,,
+Letzte Note im Fach Sport,4,Notenwert von 1 bis 6,Sport,,analog D,,,,,
+Letzte Note im Fach Arbeitslehre,5,Notenwert von 1 bis 6,Arbeitslehre,,analog D,,,,,
+Letzte Note im Fach Gestaltung,3,Notenwert von 1 bis 6,Gestaltung,,analog D,,,,,
+,,,,,,,,,,
+Aufnehmende Schule,,,,,Import in SVWS:,,,,,
+Schulnummmer,123456,,aufnehmendeSchule_Schulnr,Schueler.AufnehmendeSchule.angabeSchule,schueler.LSSchulNr,SchuelerBasisdaten.dat,50,Schulnummer der aufnehmenden Schule,,
+,,,,,,,,,,
 Daten der Anmeldung,,,,,,,,,,
-Inhalt,Beispieldaten,Hinweise,Datenfeld in Schüler Online,Xschule / Xbildung,,Schild Datei,Spalte,Schild Feldname,,
 Schulgliederung des Bildungsgangs,"C03 (NRW)
 BS (Niedersachsen)",,aufnehmendeSchule_Schulgliederung,Schueler.AufnehmendeSchule… ???,,SchuelerBasisdaten.dat,23,Gliederung,,
 Bildungsgang,"C03/115/00 (NRW)
@@ -282,7 +282,7 @@ Niedersachsen
 T = Teilzeit
 V = Vollzeit",aufnehmendeSchule_Organisationsform,Schueler.AufnehmendeSchule… ???,,,,,,
 Klasse,10V1,,aufnehmendeSchule_Klasse,Schueler.AufnehmendeSchule… ???,,SchuelerBasisdaten.dat,22,Klasse,,
-Jahrgang,1,,KlasseJahrgang,Schueler.AufnehmendeSchule.Schuljahrgang ???,,SchuelerBasisdaten.dat,21,Jahrgang,,
+Jahrgang,1,,KlasseJahrgang,Schueler.AufnehmendeSchule.Schuljahrgang ???,schueler.LSJahrgang,SchuelerBasisdaten.dat,21,Jahrgang,,
 Organisationsform der Klasse,V,"Evtl. gar nicht erforderlich in Schüler Online
 
 Zeitform der Klasse
